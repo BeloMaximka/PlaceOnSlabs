@@ -1,13 +1,13 @@
 {
-    "type": "code",
-    "modid": "placeonslabs",
-    "name": "PlaceOnSlabs",
-    "authors": [
-        "Unknown"
-    ],
-    "description": "To be added",
-    "version": "1.0.0",
-    "dependencies": {
-        "game": ""
-    }
+  "type": "code",
+  "modid": "placeonslabs",
+  "name": "Place on slabs",
+  "authors": [
+    "BeloMaximka"
+  ],
+  "description": "Lets you place stuff on slabs",
+  "version": "1.0.0",
+  "dependencies": {
+    "game": "1.21.0"
+  }
 }
