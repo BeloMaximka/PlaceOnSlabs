@@ -24,6 +24,7 @@ public static class RenderersPatch
             typeof(ForgeContentsRenderer),
             typeof(ClayFormRenderer),
             typeof(PotInFirepitRenderer),
+            typeof(IngotMoldRenderer)
         ];
 
         Type[] renderRecipeOutLineTargets = [typeof(KnappingRenderer), typeof(ClayFormRenderer), typeof(AnvilWorkItemRenderer)];
