@@ -12,7 +12,8 @@ public class BlockBehaviorFixAnimatable(Block block) : BlockBehavior(block)
 
     public override void OnLoaded(ICoreAPI api)
     {
-        offset = SlabHelper.IsSlab(block) ? 0.5f : -0.5f;
+        // TODO: move this check to SlabHelper
+        offset = block.Shape.Base.Path == "block/basic/slab/slab-down" ? 0.5f : -0.5f;
     }
 
     public override void OnBlockPlaced(IWorldAccessor world, BlockPos blockPos, ref EnumHandling handling)
@@ -27,6 +28,11 @@ public class BlockBehaviorFixAnimatable(Block block) : BlockBehavior(block)
 
     private static void FixAnimatableOffset(IWorldAccessor world, BlockPos pos, float offset)
     {
+        if (!SlabHelper.IsSlab(world.BlockAccessor.GetBlock(pos, BlockLayersAccess.SolidBlocks).BlockId))
+        {
+            return;
+        }
+
         BlockEntity? be = world.BlockAccessor.GetBlockEntity(pos.Up());
         pos.Down();
 
