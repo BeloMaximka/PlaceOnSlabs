@@ -25,7 +25,7 @@ public static class BlockOffsetCollisionPatch
             AppDomain
                 .CurrentDomain.GetAssemblies()
                 .SelectMany(a => a.GetTypes())
-                .Where(t => t.IsSubclassOf(blockAndSubclasses[0]) && !t.IsAbstract)
+                .Where(t => t.IsSubclassOf(blockAndSubclasses[0]))
         );
 
         foreach (var blockType in blockAndSubclasses)
