@@ -24,8 +24,15 @@ public static class RenderersPatch
             typeof(ForgeContentsRenderer),
             typeof(ClayFormRenderer),
             typeof(PotInFirepitRenderer),
-            typeof(IngotMoldRenderer)
+            typeof(IngotMoldRenderer),
         ];
+
+        // Containers Bundle compatibility
+        Type? containersBundleType = Type.GetType("ContainersBundle.CBContainerContentsRenderer, ContainersBundle");
+        if (containersBundleType is not null)
+        {
+            onRenderFrameTargets = onRenderFrameTargets.Append(containersBundleType);
+        }
 
         Type[] renderRecipeOutLineTargets = [typeof(KnappingRenderer), typeof(ClayFormRenderer), typeof(AnvilWorkItemRenderer)];
 
