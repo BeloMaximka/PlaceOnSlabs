@@ -7,12 +7,12 @@ namespace PlaceOnSlabs.Source.Systems;
 
 public class ServerSettings
 {
-    public const int ActualVersion = 1;
+    public const int ActualVersion = 2;
 
     public int Version { get; set; } = 0;
 
     public string[] OffsetBlacklist { get; set; } =
-    ["*:lognarrow*", "*:*fence*", "*:*segment*", "*:palisade*", "clutter", "wattle*", "*:utb*"];
+    ["*:lognarrow*", "*:*fence*", "*:*segment*", "*:palisade*", "clutter", "wattle*", "*:utb*", "primitivesurvival:monkeybridge*"];
 }
 
 internal class ConfigSystem : ModSystem
