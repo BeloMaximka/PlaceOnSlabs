@@ -14,22 +14,12 @@ public static class AnimatablePatch
     [HarmonyPatch(
         typeof(AnimatableRenderer),
         methodType: MethodType.Constructor,
-        typeof(Vec3d),
-        typeof(Vec3f),
-        typeof(AnimatorBase),
-        typeof(Dictionary<string, AnimationMetaData>),
-        typeof(MultiTextureMeshRef),
-        typeof(EnumRenderStage)
-    )]
-    [HarmonyPatch(
-        typeof(AnimatableRenderer),
-        methodType: MethodType.Constructor,
         typeof(ICoreClientAPI),
         typeof(Vec3d),
         typeof(Vec3f),
         typeof(AnimatorBase),
         typeof(Dictionary<string, AnimationMetaData>),
-        typeof(MultiTextureMeshRef),
+        typeof(MeshData),
         typeof(EnumRenderStage)
     )]
     public static void OffsetAnimatableOnSlab(ref Vec3d ___pos, ICoreClientAPI ___capi)

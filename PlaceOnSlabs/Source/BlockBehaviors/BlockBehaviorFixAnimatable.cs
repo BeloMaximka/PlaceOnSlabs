@@ -21,7 +21,7 @@ public class BlockBehaviorFixAnimatable(Block block) : BlockBehavior(block)
         FixAnimatableOffset(world, blockPos, offset * -1);
     }
 
-    public override void OnBlockBroken(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, ref EnumHandling handling)
+    public override void OnBlockBroken(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier, ref EnumHandling handling)
     {
         FixAnimatableOffset(world, pos, offset);
     }
