@@ -100,7 +100,7 @@ public static class SlabHelper
             return false;
         }
 
-        if (block.BlockBehaviors.Any(behavior => behavior is BlockBehaviorHorizontalAttachable))
+        if (block.BlockBehaviors.Any(behavior => behavior is BlockBehaviorHorizontalAttachable || behavior is BlockBehaviorLadder))
         {
             // toolracks, shelves etc
             return false;
@@ -114,6 +114,7 @@ public static class SlabHelper
             || block is BlockStalagSection
             || block is BlockMicroBlock
             || block is BlockFullCoating
+            || block is BlockAntlerMount
         )
         {
             return false;
